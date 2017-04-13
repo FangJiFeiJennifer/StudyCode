@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Get and set cursor position with contenteditable div</title>
+  <meta charset="UTF-8">
+  <style>
+    button {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      color: #fff;
+      background-color: #337ab7;
+      border: 1px solid #2e6da4;
+      border-radius: 4px;
+    }
+    button:hover{
+      background-color: #286090;
+      border-color: #204d74;
+    }
+    #editDiv{
+      display: block;
+      width: 90%;
+      height: auto;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+      -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+  </style>
+</head>
+<body>
+  <div contenteditable="true" id="editDiv">contenteditable means this div can be edit.</div>
+  <button onclick="set_mouse_position()">Set Mouse Position</button>
+  <button onclick="get_mouse_position()">Get Mouse Position</button>
+</body>
+<script>
+  function set_mouse_position() {
+    var start = 5;
+    var end = 10;
+    var el = document.getElementById("editDiv");
+    el.focus();
+    //Firefox, Chrome, Opera, Safari, IE 9+
+    if(window.getSelection) {
+      var textNode = el.firstChild;
+      var range = document.createRange();
+      range.setStart(textNode,start);
+      range.setEnd(textNode,end);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }else if(document.selection){//IE 8 and lower
+      range = document.body.createTextRange();//Create a range (a range is a like the selection but invisible)
+      range.moveToElementText(el);//Select the entire contents of the element with the range
+//      range.collapse(false);//collapse the range to the end point. false means collapse to end rather than the start
+      range.collapse(true);
+      range.moveEnd("character", end);
+      range.moveStart("character", start);
+      range.select();//Select the range (make it the visible selection
+    }
+  }
+  function get_mouse_position() {
+    var pos = 0;
+    if (window.getSelection) {
+      var se = window.getSelection();
+      pos = se.anchorOffset;
+      // var end = se.focusOffset;
+    }else if (document.selection) { //IE9-
+      var range = document.selection.createRange();
+      var srcele = range.parentElement();
+      var copy = document.body.createTextRange();
+      copy.moveToElementText(srcele);
+      for (pos = 0; copy.compareEndPoints("StartToStart", range) < 0; pos++) {
+        copy.moveStart("character", 1);
+      }
+    }
+    console.log(pos);
+    return pos;
+  }
+</script>
+</html>
