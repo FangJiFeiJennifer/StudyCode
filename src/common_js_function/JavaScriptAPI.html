@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>JavaScriptAPI</title>
+		<style>
+			.item{
+				line-height: 25px;
+				font-size: 16px;
+				padding : 1px 0px 15px 5px;
+				margin-bottom : 10px;
+				background: -webkit-linear-gradient(top, #00CCFF 0%, #00CCCC 50%,#66CC99 100%);
+				background: -o-linear-gradient(top, #00CCFF 0%, #00CCCC 50%,#66CC99 100%);
+				background: -ms-linear-gradient(top, #00CCFF 0%, #00CCCC 50%,#66CC99 100%);
+				background: linear-gradient(to bottom, #00CCFF 0%, #00CCCC 50%,#66CC99 100%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<div id="anchor">
+				<a href="#addEventListener"><h4>AddEventListener</h4></a>
+				<a href="#classList"><h4>ClassList</h4></a>
+				<a href="#locationHash"><h4>LocationHash</h4></a>
+			</div>
+			<ul>
+				<li class="item" id="addEventListener">
+					<h3 class="title">addEventerListener</h3>
+					<ul>
+						<li>document.getElementById("id").addEventListener("click",function(){},true)。</li>
+						<li>addEventListener中的第三个参数是useCapture, bool类型。 当为false时为事件冒泡(由里向外)，true为事件捕获(由外向里)。</li>
+						<li>addEventListener为同一元素添加同一事件多次，不会被覆盖掉,会依次响应。</li>
+					</ul>
+				</li>
+				
+				<li class="item" id="classList">
+					<h3 class="title">classList</h3>
+					<ul>
+						<li>classList 属性返回元素的类名，作为 DOMTokenList 对象。该属性用于在元素中添加，移除及切换 CSS 类。</li>
+						<li>classList 属性是只读的，但你可以使用 add() 和 remove() 方法修改它。</li>
+						<li>document.getElementById("myDIV").classList.add("mystyle");</li>
+						<li>contains(class )返回布尔值，判断指定的类名是否存在。true - 元素包已经包含了该类名;false - 元素中不存在该类名</li>
+					</ul>
+				</li>
+				
+				<li class="item" id="locationHash">
+					<h3 class="title">window.location</h3>
+					<ul>
+						<li>location是javascript里边管理地址栏的内置对象，比如location.href就管理页面的url，用location.href=url就可以直接将页面重定向url。</li>
+						<li>location.hash则可以用来获取或设置页面的标签值。比如http://domain/#admin的location.hash="#admin"。</li>
+						<li>我们可以用window.location.hash 来解决Ajax让前进，后台按钮失效的问题。</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script>
+			document.addEventListener("click",function(event){
+				//getElementsByClassName 得到的是一个DOM对象数组； getElementById 得到的才是一个DOM对象。
+				var classLth = document.getElementsByClassName("content")[0].classList; //length = 1;
+				classLth.toggle("colorful");
+				//window.location.hash demo
+				alert(window.location.hash);
+				
+			},false);
+		</script>
+	</body>
+</html>
