@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>css display attribute</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<style type="text/css">
+			body > div{
+				margin-bottom: 10px;
+			}
+			.blockEle{
+				background-color:Bisque;
+				color:DarkRed;
+			}
+			.blockToInlineEle{
+				display: inline;
+				background-color: Coral;
+				color:DarkRed
+			}
+			.inlineEle{
+				background-color:Aquamarine;
+			}
+			.inlineBlockEle{
+				display: inline-block;
+				background-color: Brown;
+			}
+			.content{
+				background-color: BlueViolet;
+			}
+			p{
+				background-color: #5cb85c;
+				padding: 10px 5px;
+			}
+			.listItem span{
+				display:list-item;
+				/*设置的顺序是： type position image
+				list-style: square outside url('/i/eg_arrow.gif'); */
+				list-style: circle inside;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="blockEle">
+			块级元素会撑满一整行，元素前后会有换行符。
+		</div>	
+		<div class="content">
+			<span class="inlineEle">
+				inline元素，元素前后没有换行符。
+			</span>
+			<div class="blockToInlineEle">
+				块级元素设置display: inline;表现形式就是inline元素。
+			</div>	
+			<div class="inlineBlockEle">
+				inline-block属性将对象呈递为内联对象,但对象的内容作为块对象呈递。
+			</div>	
+		</div>
+		<div class="listItem">
+			<span>display:list-item;按列表显示。</span>
+			<span>表现形式类似ul,li之类。</span>
+			<span>list-style可以设置list的标记。</span>
+		</div>
+		
+		<table class="table table-bordered table-hover">
+			<caption>display属性的常用值</caption>
+			<colgroup>
+				<col class="col-xs-2">
+				<col class="col-xs-10">
+			</colgroup>
+			<tr>
+				<td>display:block</td>
+				<td>块级元素，元素前后有换行符，多个block元素会各自新起一行，可以设置width, height。</td>
+			</tr>
+			<tr>
+				<td>display:inline</td>
+				<td>内联元素，元素前后没有换行符，一系列inline元素都在一行内显示，直到该行排满，不可以设置width,height。</td>
+			</tr>
+			<tr>
+				<td>display:inline-block</td>
+				<td>
+				可以将对象呈递为内联对象，但是对象的内容作为块对象呈递。就是使元素既具有width,height，又具有同行特性。
+				如上：inline和inline-block元素会排在一行，但是inline-block元素的高度会撑满整列，显得比inline元素要高。
+				</td>
+			</tr>
+			<tr>
+				<td>display:list-item</td>
+				<td>此元素会作为列表显示。</td>
+			</tr>
+			<tr>
+				<td>display:table</td>
+				<td>此元素会作为块级表格来显示（类似 &lt;table&gt;），表格前后带有换行符。</td>
+			</tr>
+			<tr>
+				<td>display:inline-table</td>
+				<td>此元素会作为内联表格来显示（类似 &lt;table&gt;），表格前后没有换行符。</td>
+			</tr>
+			<tr>
+				<td>display:table-row</td>
+				<td>此元素会作为一个表格行显示（类似 &lt;tr&gt;）。</td>
+			</tr>
+			<tr>
+				<td>display:table-column</td>
+				<td>此元素会作为一个单元格列显示（类似 &lt;col&gt;）。</td>
+			</tr>
+			<tr>
+				<td>display:table-cell</td>
+				<td>此元素会作为一个表格单元格显示（类似 &lt;td&gt; 和 &lt;th&gt;）。</td>
+			</tr>
+			<tr>
+				<td>display:table-caption</td>
+				<td>此元素会作为一个表格标题显示（类似 &lt;caption&gt;）。</td>
+			</tr>
+			<tr>
+				<td>display:inherit</td>
+				<td>规定应该从父元素继承 display 属性的值。。</td>
+			</tr>
+		</table>
+	</body>
+</html>

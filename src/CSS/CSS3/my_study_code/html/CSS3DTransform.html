@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS3 3D Transform</title>
+
+<style>
+  .stage {
+    height:100px;
+    perspective:800px;
+    position: relative;
+    margin-top:300px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .container {
+    transform-style: preserve-3d;
+    width:100px;
+    height:100px;
+    margin-left: -50px;
+    position: absolute;
+    left:50%;
+    transition:all 0.5s;
+    animation: circle 5s linear 0s infinite;
+  }
+  .block {
+    width:100px;
+    height:100px;
+    position: absolute;
+    bottom:0;
+    transition:all 0.5s;
+  }
+
+  @keyframes circle {
+    from {
+      transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    }
+    to {
+      transform: rotateY(720deg) rotateX(360deg) rotateZ(360deg);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+	<div class="container" id="container">
+		<div class="block" style="transform: rotateY(0deg) translateZ(195.8px); background-color: rgba(255, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(40deg) translateZ(195.8px); background-color: rgba(235, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(80deg) translateZ(195.8px); background-color: rgba(215, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(120deg) translateZ(195.8px); background-color: rgba(195, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(160deg) translateZ(195.8px); background-color: rgba(175, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(200deg) translateZ(195.8px); background-color: rgba(155, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(240deg) translateZ(195.8px); background-color: rgba(135, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(280deg) translateZ(195.8px); background-color: rgba(115, 107, 107, 0.498039);"></div>
+		<div class="block" style="transform: rotateY(320deg) translateZ(195.8px); background-color: rgba(95, 107, 107, 0.498039);"></div>
+	</div>
+</div>
+<script src="../js/jquery-3.1.0.js"></script>
+<script>
+
+var rotate = 0
+var elements = $(".block")
+var i = 0
+var initTemp = setInterval(function() {
+		var ele = elements[i++]
+		$(ele).css("transform", "rotateY("+rotate+"deg) translateZ(195.8px)")
+		rotate += 40
+		if(i==9) clearInterval(initTemp);
+	},500)
+
+
+</script>
+</body>
+</html>

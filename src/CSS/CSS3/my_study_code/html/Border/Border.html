@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3边框</title>
+  <style>
+    body>div{
+      padding: 5px;
+    }
+    body>div:first-child{
+      width: 1200px;
+      height: 140px;
+      border: 10px solid transparent;
+      border-radius: 0 15px 15px 15px;
+      -moz-border-top-colors: #B2DFDB #80CBC4 #4DB6AC #26A69A #009688 #00897B #00796B #00695C;
+      -moz-border-right-colors: #FFF9C4 #FFF176 #FFEB3B #FDD835 #FBC02D #F9A825 #F57F17 #E65100;
+      -moz-border-bottom-colors: #B3E5FC #81D4FA #4FC3F7 #29B6F6 #039BE5 #0288D1 #0277BD #01579B;
+      -moz-border-left-colors: #EF9A9A #EF5350 #F44336 #E53935 #D32F2F #C62828 #B71C1C #BF360C;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: 1px solid #5aa0e6;
+      width: 1150px;
+    }
+    .border li {
+      display: inline-block;
+      width: 80px;
+      height: 50px;
+      margin: 5px;
+      text-align: center;
+      line-height: 45px;
+    }
+    .border li:first-child {
+      border: none;
+    }
+    .border li:nth-child(2) {
+      border: hidden;
+    }
+    .border li:nth-child(3) {
+      border: 3px dotted darkred;
+    }
+    .border li:nth-child(4) {
+      border: 3px dashed darkred;
+    }
+    .border li:nth-child(5) {
+      border: 3px solid darkred;
+    }
+    .border li:nth-child(6) {
+      border: 3px double darkred;
+    }
+    .border li:nth-child(7) {
+      border: 3px groove #ff5636;
+    }
+    .border li:nth-child(8) {
+      border: 3px ridge #32eaff;
+    }
+    .border li:nth-child(9) {
+      border: 3px inset darkred;
+    }
+    .border li:nth-child(10) {
+      border: 3px outset darkred;
+    }
+    .border li:nth-child(11) {
+      border: inherit;
+    }
+
+    .borderImage{
+      width: 1200px;
+      height: 200px;
+      border: 10px solid;
+      /*水平round效果*/
+      /*-webkit-border-image: url(../../images/border-image.png) 50 round stretch;*/
+      /*-moz-border-image: url(../../images/border-image.png) 50 round stretch;*/
+      /*-o-border-image: url(../../images/border-image.png) 50 round stretch;*/
+      /*-ms-border-image: url(../../images/border-image.png) 50 round stretch;*/
+      /*border-image: url(../../images/border-image.png) 50 round stretch;*/
+
+      /*水平repeat效果*/
+      /*-webkit-border-image: url(../../images/border-image.png) 50 repeat stretch;*/
+      /*-moz-border-image: url(../../images/border-image.png) 50 repeat stretch;*/
+      /*-o-border-image: url(../../images/border-image.png) 50 repeat stretch;*/
+      /*-ms-border-image: url(../../images/border-image.png) 50 repeat stretch;*/
+      /*border-image: url(../../images/border-image.png) 50 repeat stretch;*/
+
+      /*水平stretch效果*/
+      /*-webkit-border-image: url(../../images/border-image.png) 50 stretch stretch;*/
+      /*-moz-border-image: url(../../images/border-image.png) 50 stretch stretch;*/
+      /*-o-border-image: url(../../images/border-image.png) 50 stretch stretch;*/
+      /*-ms-border-image: url(../../images/border-image.png) 50 stretch stretch;*/
+      /*border-image: url(../../images/border-image.png) 50 stretch stretch;*/
+
+      /*垂直round效果*/
+      /*-webkit-border-image: url(../../images/border-image.png) 50 stretch round;*/
+      /*-moz-border-image: url(../../images/border-image.png) 50 stretch round;*/
+      /*-o-border-image: url(../../images/border-image.png) 50 stretch round;*/
+      /*-ms-border-image: url(../../images/border-image.png) 50 stretch round;*/
+      /*border-image: url(../../images/border-image.png) 50 stretch round;*/
+
+      /*垂直repeat效果*/
+      -webkit-border-image: url(../images/border-image.png) 50 stretch repeat;
+      -moz-border-image: url(../images/border-image.png) 50 stretch repeat;
+      -o-border-image: url(../images/border-image.png) 50 stretch repeat;
+      -ms-border-image: url(../images/border-image.png) 50 stretch repeat;
+      border-image: url(../images/border-image.png) 50 stretch repeat;
+    }
+    .borderRadius,
+    .semicircle,
+    .quarterCircle,
+    .oval{
+      display: flex;
+      border-bottom: double 5px #ff5342;
+    }
+    .borderRadius > div{
+      margin: 10px;
+      width: 200px;
+      height: 100px;
+      font: bold 14px/16px arial;
+      text-align: center;
+    }
+    .borderRadius > div:first-child {
+      border: 10px solid orange;
+      border-radius: 60px 40px 30px 20px / 30px 20px 10px 5px;
+    }
+    .borderRadius > div:nth-child(2) {
+      border: 20px solid orange;
+      border-radius: 30px;
+    }
+    .borderRadius > div:nth-child(3) {
+      border: 20px solid orange;
+      border-radius: 10px;
+    }
+    .borderRadius > div:nth-child(4) {
+      border: 30px solid orange;
+      border-width: 20px 5px 30px 60px;
+      border-radius: 100px;
+    }
+
+    .borderGraph > div:nth-of-type(1){
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      border-radius: 50%;
+      /*border-radius: 50px;*/
+    }
+
+    .semicircle > div{
+      background-color: orange;
+      margin: 10px;
+    }
+    .semicircle > .top{
+      width: 100px;
+      height: 50px;
+      border-radius: 50px 50px 0 0;
+    }
+    .semicircle > .right{
+      width: 50px;
+      height: 100px;
+      border-radius: 0px 50px 50px 0;
+    }
+    .semicircle > .bottom{
+      width: 100px;
+      height: 50px;
+      border-radius: 0px 0 50px 50px;
+    }
+    .semicircle > .left{
+      width: 50px;
+      height: 100px;
+      border-radius: 50px 0 0 50px;
+    }
+
+    .quarterCircle > div{
+      margin: 10px;
+      background-color: orange;
+    }
+    .quarterCircle > div:first-child{
+      width: 100px;
+      height: 100px;
+      border-radius: 100px 0 0 0;
+    }
+    .quarterCircle > div:nth-child(2){
+      width: 100px;
+      height: 100px;
+      border-radius: 0 100px 0 0;
+    }
+    .quarterCircle > div:nth-child(3){
+      width: 100px;
+      height: 100px;
+      border-radius: 0 0 100px 0;
+    }
+    .quarterCircle > div:nth-child(4){
+      width: 100px;
+      height: 100px;
+      border-radius: 0 0 0 100px;
+    }
+
+    .oval > div{
+      margin: 10px;
+      background-color: orange;
+    }
+
+    .oval > div:nth-of-type(1) {
+      width: 100px;
+      height: 50px;
+      border-radius: 100px / 50px;
+    }
+    .oval > div:nth-of-type(2) {
+      width: 50px;
+      height: 100px;
+      border-radius: 50px / 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="border">
+    <h3>CSS3边框属性</h3>
+    <ul>
+      <li>none</li>
+      <li>hidden</li>
+      <li>dotted</li>
+      <li>dashed</li>
+      <li>solid</li>
+      <li>double</li>
+      <li>groove</li>
+      <li>ridge</li>
+      <li>inset</li>
+      <li>outset</li>
+      <li>inherit</li>
+    </ul>
+  </div>
+
+  <div class="borderImage">
+    <h3>CSS3 border-image</h3>
+    <ol>
+      <li>border-image: none | &lt;image-source&gt; [number | percentage] {1,4} [border-width] [stretch | repeat | round] {0,2}</li>
+      <li>none是默认值，表示无边框图片。</li>
+      <li>image-source是指图片路径。</li>
+      <li>number是一个数值，用来设置边框或者边框背景图片的大小，单位是px，可以是1~4个值，表示四个方位（上，右，下，左）。</li>
+      <li>percentage跟number作用相同，不同之处是percentage用的是百分比。</li>
+      <li>stretch,repeat,round设置背景图片的平铺方式。stretch拉伸边框背景图片，为默认值；round是平铺；repeat是重复。</li>
+    </ol>
+  </div>
+
+  <div class="borderRadius">
+    <div></div>
+    <div>
+      border-radius &gt; border-width内半径大于零，出现内圆角。
+    </div>
+    <div>
+      border-radius &lt; border-width内半径小于零，没有内圆角。
+    </div>
+    <div>
+      元素相邻边有不同宽度，圆角将会从宽的边平滑过渡到窄的一边，元素相邻转角是由大到小。
+    </div>
+  </div>
+
+  <div class="borderGraph">
+    <h3>利用圆角画圆时，元素的高度和宽度相同，圆角的半径值为元素高或者宽的一半，或者直接设置为50%</h3>
+    <div></div>
+  </div>
+
+  <div class="semicircle">
+    <div class="top"></div>
+    <div class="right"></div>
+    <div class="bottom"></div>
+    <div class="left"></div>
+  </div>
+
+  <div class="quarterCircle">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="oval">
+    <h3>
+      用border-radius做椭圆需要设置水平和垂直方向的半径值。
+      水平椭圆元素的宽度是高度的两倍，而且border-radius的水平半径等于元素的宽度，垂直半径等于元素高度；
+      而垂直椭圆的参数刚好相反。
+    </h3>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

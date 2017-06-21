@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>display:flex||display:inline-flex</title>
+  <style>
+    .flex {
+      display: flex;
+      background: red;
+    }
+    .flex > div {
+      width: 50px;
+      height: 50px;
+      border: 1px solid blue;
+      box-sizing: border-box;
+    }
+
+    .inlineFlex {
+      background: red;
+      display: inline-flex;
+      margin-top: 15px;
+    }
+    .inlineFlex > div {
+      width: 50px;
+      height: 50px;
+      border: 1px solid blue;
+      box-sizing: border-box;
+    }
+
+    .flexGrow {
+      background: red;
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .flexGrow > div {
+      width: 50px;
+      height: 50px;
+      border: 1px solid blue;
+      box-sizing: border-box;
+      flex-grow: 1;
+    }
+
+    .flexGrow > div:last-child{
+      flex-grow: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+
+  <div class="inlineFlex">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+
+  <div class="flexGrow">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </div>
+</body>
+</html>

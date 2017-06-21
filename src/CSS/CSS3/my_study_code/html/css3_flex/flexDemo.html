@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+			.content,
+			.inner{
+				display: -webkit-flex;
+				display: flex;
+			}
+			.left,
+			.right {
+					padding: 10px;
+					border: 1px solid #f40;
+			}
+			.left{
+				-webkit-flex: 1;
+						flex: 1;
+			}
+			.right{
+				-webkit-flex: 1;
+						flex: 1;
+				word-break: break-word;
+			}
+			.circle{
+				position: relative;
+				width: 100px;
+				height: 100px;
+				background-color: #efefef;
+				border: 3px #a72525 solid;
+				-webkit-border-radius: 100px;
+			}
+			.circle:after{
+				content: "";
+				position: absolute;
+				top:5px;
+				left:5px;
+				width: 90px;
+				height: 90px;
+				background: red;
+				-moz-border-radius: 50px;
+				-webkit-border-radius: 50px;
+				border-radius: 50px;
+			}
+    </style>
+</head>
+<body>
+<div class="wrap">
+	<div class="content">
+		<div class="left">
+			left div
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			
+			left div
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			left div
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			left div
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			left div
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		</div>
+		<div class="right">
+			Hi worldfffffffffffffffffffffffffffffffffffffffffffffffffffffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+			<div class="inner">
+				<div class="left">Hello</div>
+				<div class="right">
+					<p>NIHAO</p>
+					<p>NIHAO</p>
+					<p>NIHAO</p>
+					<p>NIHAO</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="circle"></div>
+</div>
+</body>
+</html>

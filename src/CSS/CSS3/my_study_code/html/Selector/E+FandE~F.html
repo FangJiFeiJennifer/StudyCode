@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Selector Demo</title>
+  <style>
+    body{
+      display: flex;
+    }
+    section{
+      width: 300px;
+      border: 1px solid lightgray;
+      margin: 0px 15px;
+    }
+    section > div{
+      background: lightpink;
+    }
+    div{
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+    div div{
+      background: orange;
+    }
+    .adjacent .active + div{
+      background: red;
+    }
+
+    .general .active ~ div{
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<section class="adjacent">
+  <h4>相邻元素选择器：E + F 选择匹配F的元素，且匹配的F元素紧位于匹配的E元素的后面</h4>
+  <div class="active">1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <div>7
+    <div>8
+      <div>9
+        <div>10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="general">
+  <h4>通用选择器：E ~ F 选择匹配F的元素，且匹配的位于匹配的E元素后的所有匹配的F元素</h4>
+  <div class="active">1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <div>7
+    <div>8
+      <div>9
+        <div>10</div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

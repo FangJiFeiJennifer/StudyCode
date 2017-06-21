@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 background</title>
+  <style>
+    .backgroundOrigin,
+    .backgroundClip,
+    .backgroundSize{
+      display: flex;
+    }
+    .backgroundOrigin > div,
+    .backgroundClip > div{
+      color: #fff;
+      margin: 10px;
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      background: orange url("../../images/background.jpg") no-repeat left top;
+      border: 10px dotted darkred;
+    }
+    .backgroundOrigin > div:first-child{
+       -webkit-background-origin: border-box;
+       -o-background-origin: border-box;
+       -ms-background-origin: border-box;
+       background-origin: border-box;
+     }
+    .backgroundOrigin > div:nth-child(2){
+      -webkit-background-origin: padding-box;
+      -o-background-origin: padding-box;
+      -ms-background-origin: padding-box;
+      background-origin: padding-box;
+    }
+    .backgroundOrigin > div:nth-child(3){
+      -webkit-background-origin: content-box;
+      -o-background-origin: content-box;
+      -ms-background-origin: content-box;
+      background-origin: content-box;
+    }
+
+    .backgroundClip > div:first-child{
+      -webkit-background-clip: border-box;
+      -o-background-clip: border-box;
+      -ms-background-clip: border-box;
+      background-clip: border-box;
+    }
+    .backgroundClip > div:nth-child(2){
+      -webkit-background-clip: padding-box;
+      -o-background-clip: padding-box;
+      -ms-background-clip: padding-box;
+      background-clip: padding-box;
+    }
+    .backgroundClip > div:nth-child(3){
+      -webkit-background-clip: content-box;
+      -o-background-clip: content-box;
+      -ms-background-clip: content-box;
+      background-clip: content-box;
+    }
+    /*webkit内核中background-clip的text属性*/
+    .backgroundClip > div:nth-child(4){
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .backgroundSize > div{
+      margin: 10px;
+      width: 300px;
+      height: 200px;
+      padding: 20px;
+      background: url("../../images/images.jpg") no-repeat left top;
+      border: 10px dotted darkred;
+    }
+
+    .backgroundSize > div:first-child {
+      background-size: auto;
+    }
+    .backgroundSize > div:nth-child(2) {
+      /*background-size: 50px 100px;*/
+      background-size: 50% 50%;
+    }
+    .backgroundSize > div:nth-child(3) {
+      background-size: cover;
+      background-position: center;
+    }
+    .backgroundSize > div:nth-child(4) {
+      width: 100px;
+      height: 50px;
+      background-size: contain;
+    }
+
+    .multiBg {
+      height: 300px;
+      width: 800px;
+      background-image   : url("../../images/firefox.png"),
+      url(../../images/bubbles.png),
+      linear-gradient(to right, rgba(30, 75, 115, 1),  rgba(255, 255, 255, 0));
+      background-repeat  : no-repeat, no-repeat, no-repeat;
+      background-position: bottom right, left, right;
+    }
+  </style>
+</head>
+<body>
+  <h3>background-origin</h3>
+  <div class="backgroundOrigin">
+    <div>border-box</div>
+    <div>padding-box</div>
+    <div>content-box</div>
+  </div>
+
+  <h3>background-clip</h3>
+  <div class="backgroundClip">
+    <div>border-box</div>
+    <div>padding-box</div>
+    <div>content-box</div>
+    <div>
+      webkit内核中background-clip的text属性配合webkit内核的私有属性text-fill-color: transparent可以制作背景图片填充文本的效果。
+    </div>
+  </div>
+
+  <h3>background-size</h3>
+  <div class="backgroundSize">
+    <div>auto</div>
+    <div>&lt;number&gt; || &lt;percentage&gt;</div>
+    <div>cover</div>
+    <div>contain</div>
+  </div>
+
+  <div class="multiBg">
+    CSS3多背景
+  </div>
+</body>
+</html>

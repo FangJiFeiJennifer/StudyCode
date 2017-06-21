@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Box Module</title>
+  <style type="text/css">
+    .box{
+      background-color: aqua;
+      border: 2px solid red;
+      height: 100px;
+      width: 100px;
+      margin: 10px;
+      padding: 10px;
+    }
+    .borderBox{
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    .contentBox{
+      -webkit-box-sizing:content-box;
+         -moz-box-sizing:content-box;
+              box-sizing:content-box;
+    }
+    .parent{
+      width: 100%;
+      border: 1px solid blue;
+    }
+    .child{
+      box-sizing: border-box;
+      height: 20px;
+      width: 23.1%;
+      margin-right: 2%;
+      border: 1px solid red;
+      display: inline-block;
+    }
+    .child:nth-child(4n){
+      margin-right: 0px !important;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="box default">
+    default box(content box) moudle
+  </div>
+  <div class="box borderBox">
+    border box
+  </div>
+  <div class="box contentBox">
+    content box
+  </div>
+
+  <div class="parent">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
+</body>
+</html>

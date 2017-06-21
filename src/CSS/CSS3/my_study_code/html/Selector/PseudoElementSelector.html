@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>伪元素选择器</title>
+  <style>
+    p{
+      text-indent: 1em;
+    }
+    p::first-letter{
+      float: left;
+      color: #903;
+      padding: 4px 8px 0 3px;
+      font: 75px/60px Georgia;
+    }
+    P::first-line{
+      color: #903;
+      font: italic 16px/18px Georgia;
+    }
+    ::selection{
+      background: #ffa251;
+      color: #fff;
+    }
+    ::-moz-selection{
+      background: #ffa251;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    Today, my dad is the best dad I could ask for.He’s a loving husband to my mom (always making her laugh),
+    he’s been to every one of my soccer games since I was 5 (I’m 17 now), and he provides for our family as a construction foreman.
+    This morning when I was searching through my dad’s toolbox for a pliers, I found a dirty folded up paper at the bottom.
+    It was an old journal entry in my dad’s handwriting dated exactly one month before the day I was born.
+  </p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>css display attribute</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			.opacity{
+				padding: 10px;
+				background-color:DarkRed;
+				opacity:0.5;
+				/*IE8和早期版本支持另一种过滤器属性*/
+				filter:Alpha(opacity=50)
+			}
+			.alpha{
+				background: rgba(255,255,0,0.5);
+			}
+			span{
+				display: list-item;
+				list-style: circle inside;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="opacity">
+			<span>所有浏览器都支持 opacity 属性。</span>
+			<span>注释：IE8 以及更早的版本支持替代的 filter 属性。例如：filter:Alpha(opacity=50)。</span>	
+			<span>opacity会继承父元素的 opacity 属性,所以文本也有了透明度。</span>	
+		</div>
+		<div class="alpha">
+			<span>R：红色值。正整数 | 百分数。</span>
+			<span>G：绿色值。正整数 | 百分数。</span>
+			<span>B：蓝色值。正整数| 百分数。</span>
+			<span>透明度。取值0~1之间。</span>
+			<span>RGBA设置的元素的后代元素不会继承不透明属性,所以文本不会有透明度。</span>
+			<span style="color: rgba(0,0,255,0.5);">你也可以通过这种方式专门为文本指定透明度。</span>
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Snow flying</title>
+  <style>
+    body {
+      background: url('images/town2.jpg') no-repeat;
+      background-size: 100%;
+    }
+    #snow,
+    #snow_center,
+    #snow_right{
+      font-family: Androgyne;
+      background-image: url('images/snow.png'), url('images/snow2.png');
+      background-size: 20px 20px,10px 10px;
+      background-repeat: no-repeat;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index:1;
+      -webkit-animation: snow 5s linear infinite;
+      -moz-animation: snow 5s linear infinite;
+      -ms-animation: snow 5s linear infinite;
+      animation: snow 5s linear infinite;
+    }
+    #snow{
+      left: 0;
+      width: 33.33%;
+    }
+    #snow_center{
+      left: 33.3%;
+      width: 33.33%;
+    }
+    #snow_right{
+      left: 66.6%;
+      width: 33.33%;
+    }
+    @keyframes snow {
+      0% {
+        background-position: 0px 0px, 0px 0px;
+      }
+      50% {
+        background-position: 500px 500px, 100px 200px;
+      }
+      100% {
+        background-position: 500px 1000px, 200px 400px;
+      }
+    }
+    @-moz-keyframes snow {
+      0% {
+        background-position: 0px 0px, 0px 0px;
+      }
+      50% {
+        background-position: 500px 500px, 100px 200px;
+      }
+      100% {
+        background-position: 500px 1000px, 200px 400px;
+      }
+    }
+    @-webkit-keyframes snow {
+      0% {
+        background-position: 0px 0px, 0px 0px;
+      }
+      50% {
+        background-position: 500px 500px, 100px 200px;
+      }
+      100% {
+        background-position: 500px 1000px, 200px 400px;
+      }
+    }
+    @-ms-keyframes snow {
+      0% {
+        background-position: 0px 0px, 0px 0px;
+      }
+      50% {
+        background-position: 500px 500px, 100px 200px;
+      }
+      100% {
+        background-position: 500px 1000px, 200px 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="snow">
+  </div>
+  <div id="snow_center">
+  </div>
+  <div id="snow_right">
+  </div>
+</body>
+</html>

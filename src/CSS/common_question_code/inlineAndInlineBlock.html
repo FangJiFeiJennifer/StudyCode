@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    .compare{
+      display: -webkit-flex;
+      display: flex;
+    }
+    span,label{
+      width: 100px;
+      height:20px;
+      border: 1px solid red;
+    }
+    .blockElement div{
+      width: 100px;
+      height:40px;
+      border: 1px solid red;
+    }
+    .inlineBlcok label,
+    .inlineBlcok span,
+    .inlineBlcok div{
+      display: inline-block;
+      width: 100px;
+      height:30px;
+      border: 1px solid green;
+    }
+    .inline div{
+      display: inline;
+      width: 100px;
+      height:20px;
+      border: 1px solid orangered;
+    }
+  </style>
+</head>
+<body>
+<div class="content">
+  <ol>
+    <li>
+      内联元素默认是不会换行的，除非元素的宽度超过了屏幕的宽度。
+    </li>
+    <li>
+      CSS为内联元素设置的高和宽是不起作用的，除非为内联元素设置display:inline-block;
+    </li>
+    <li>
+      内联元素之间默认左右有间距，上下没有。
+    </li>
+    <li>
+      通过以下显示内容，我们可以看出内联元素与inline-block之间的区别。
+    </li>
+  </ol>
+  <div class="compare">
+    <div>
+      <span>span1</span>
+      <span>span2</span>
+      <label>Label</label>
+    </div>
+    <div class="inlineBlcok">
+      <span>span1</span>
+      <span>span2</span>
+      <label>Label</label>
+    </div>
+  </div>
+  <ol>
+    <li>
+      块级元素会自动换行，可以设置高和宽度。
+    </li>
+    <li>
+      当块级元素设置为display:inline-block; display:inline;的区别可从下面看出来。
+    </li>
+  </ol>
+  <div class="compare">
+    <div class="blockElement">
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+    </div>
+    <div class="inlineBlcok">
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+    </div>
+    <div class="inline">
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动态伪类选择器</title>
+  <style>
+    body button,
+    body a,
+    body span{
+      padding: 10px 15px;
+      border: 1px solid darkgrey;
+      border-radius: 2px;
+    }
+    button{
+      background: #fff;
+    }
+    button:link,
+    a:link,
+    span:link{
+      background: #80DEEA;
+    }
+
+    button:visited,
+    a:visited,
+    span:visited{
+      background: #FB8C00;
+    }
+
+    button:hover,
+    a:hover,
+    span:hover{
+      background: #66BB6A;
+    }
+
+    button:active,
+    a:active,
+    span:active{
+      background: #DD2C00;
+    }
+
+    button:focus,
+    a:focus,
+    span:focus{
+      background: #FFD600;
+    }
+  </style>
+</head>
+<body>
+  <a href="http://www.w3help.org/zh-cn/causes/RS3005">低版本IE浏览器的动态伪类选择器</a>
+  <button>Just a Button</button>
+  <span>Just a normal element</span>
+  <ol>
+    <li>:link, :visted仅用于超链接。</li>
+    <li>:active与:focus单独存在时都是鼠标点下去未松开的状态。但是当同时存在时链接和按钮会渲染:focus的样式，其他的元素则会渲染:active的样式。</li>
+    <li>锚点伪类的设置必须遵循一个原则“link->visited->hover->active”。</li>
+  </ol>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>否定伪类选择器</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    ul{
+      margin: 20px auto;
+      width: 690px;
+      letter-spacing: -4px;
+      word-spacing: -4px;
+      font-size: 0px;
+      list-style: none outside none;
+    }
+    li{
+      display: inline-block;
+      margin: 5px;
+      font-size: 16px;
+      letter-spacing: normal;
+      word-spacing: normal;
+      zoom: 1;
+    }
+    img{
+      width: 128px;
+      height: 128px;
+    }
+    /*灰度*/
+    li:nth-child(2){
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+    }
+    /*褐色*/
+    li:nth-child(3) {
+      -webkit-filter: sepia(1);
+      filter: sepia(1);
+    }
+    /*饱和度*/
+    li:nth-child(4) {
+      -webkit-filter: saturate(0.5);
+      filter: saturate(0.5);
+    }
+    /*色相旋转*/
+    li:nth-child(5) {
+      -webkit-filter: hue-rotate(180deg);
+      filter: hue-rotate(180deg);
+    }
+    /*反色*/
+    li:nth-child(6) {
+      -webkit-filter: invert(1);
+      filter: invert(1);
+    }
+    /*透明度*/
+    li:nth-child(7) {
+      -webkit-filter: opacity(0.5);
+      filter: opacity(0.5);
+    }
+    /*亮度*/
+    li:nth-child(8) {
+      -webkit-filter: brightness(0.8);
+      filter: brightness(0.8);
+    }
+    /*对比度*/
+    li:nth-child(9) {
+      -webkit-filter: contrast(0.8);
+      filter: contrast(0.8);
+    }
+    /*模糊度*/
+    li:nth-child(10) {
+      -webkit-filter: blur(3px);
+      filter: blur(3px);
+    }
+    /*阴影*/
+    li:nth-child(11) {
+      -webkit-filter: drop-shadow(5px 5px 5px #ccc);
+      filter: drop-shadow(5px 5px 5px #ccc);
+    }
+    /*综合效果*/
+    li:nth-child(12) {
+      -webkit-filter: saturate(6) hue-rotate(361deg) brightness(.09);
+      filter: saturate(6) hue-rotate(361deg) brightness(0.09);
+    }
+    ul:hover li:not(:hover) {
+      -webkit-filter: blur(2px) grayscale(1);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+    <li>
+      <img src="../images/pineapple.jpg">
+    </li>
+  </ul>
+</body>
+</html>

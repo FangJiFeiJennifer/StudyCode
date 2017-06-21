@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>CSS3 Box Shadow</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <style>
+    body{
+      background-color: aliceblue;
+      padding: 10px;
+    }
+    .shadowDemo{
+      margin-top: 30px;
+    }
+
+    .shadowDemo>div{
+      height: 200px;
+      background-color: #fff;
+    }
+
+    .demo1{
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 1px red inset;
+    }
+
+    .demo2{
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 1px green;
+    }
+
+    .demo3{
+      background-color: #FFCC80 !important;
+      border: 2px solid black;
+      border-radius: 5px;
+      box-shadow: 0 0 5px 1px #E65100 inset;
+    }
+
+    .multipleShadow{
+      margin: 20px 25px;
+      border: 1px solid #FFF9C4;
+      box-shadow: 0 0 0 2px #FFF176,
+                  0 0 0 5px #FFD54F,
+                  0 0 0 8px #FFC107,
+                  0 0 0 11px #FFB300,
+                  0 0 0 14px #FFA000,
+                  0 0 0 17px #FF8F00,
+                  0 0 0 20px #FF6F00;
+      border-radius: 5px;
+    }
+
+    .rainbow{
+      margin: 20px 25px;
+      border: 1px solid #FFF9C4;
+      box-shadow: 0 0 0 1px red,
+                  0 0 0 5px orange,
+                  0 0 0 8px yellow,
+                  0 0 0 11px green,
+                  0 0 0 14px cyan,
+                  0 0 0 17px blue,
+                  0 0 0 20px purple;
+      border-radius: 5px;
+    }
+
+    .shadow1{
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      -o-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+    }
+
+    .shadow2,
+    .shadow3,
+    .shadow3{
+      position: relative;
+    }
+    .shadow2:before,
+    .shadow2:after{
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 15px;
+      left: 10px;
+      width: 50%;
+      top: 80%;
+      max-width:300px;
+      background: #777;
+      -webkit-box-shadow: 0 15px 10px #777;
+      -moz-box-shadow: 0 15px 10px #777;
+      box-shadow: 0 15px 10px #777;
+    }
+    .shadow2:before{
+      -webkit-transform: rotate(-3deg);
+      -moz-transform: rotate(-3deg);
+      -o-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+      transform: rotate(-3deg);
+    }
+    .shadow2:after{
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+      -o-transform: rotate(3deg);
+      -ms-transform: rotate(3deg);
+      transform: rotate(3deg);
+      right: 10px;
+      left: auto;
+    }
+
+    /*Shadow 3*/
+    .shadow3:before,
+    .shadow3:after{
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 15px;
+      left: 10px;
+      width: 50%;
+      top: 80%;
+      max-width:300px;
+      background: #777;
+      -webkit-box-shadow: 0 15px 10px #777;
+      -moz-box-shadow: 0 15px 10px #777;
+      box-shadow: 0 15px 10px #777;
+    }
+    .shadow3:before{
+      -webkit-transform: rotate(-3deg);
+      -moz-transform: rotate(-3deg);
+      -o-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+      transform: rotate(-3deg);
+    }
+    /*Shadow 4*/
+    .shadow4:before,
+    .shadow4:after{
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 25px;
+      left: 10px;
+      width: 50%;
+      top: 80%;
+      max-width:300px;
+      background: #777;
+      -webkit-box-shadow: 0 35px 20px #777;
+      -moz-box-shadow: 0 35px 20px #777;
+      box-shadow: 0 35px 20px #777;
+    }
+    .shadow4:before{
+      -webkit-transform: rotate(-8deg);
+      -moz-transform: rotate(-8deg);
+      -o-transform: rotate(-8deg);
+      -ms-transform: rotate(-8deg);
+      transform: rotate(-8deg);
+    }
+    .shadow4:after{
+      -webkit-transform: rotate(8deg);
+      -moz-transform: rotate(8deg);
+      -o-transform: rotate(8deg);
+      -ms-transform: rotate(8deg);
+      transform: rotate(8deg);
+      right: 10px;
+      left: auto;
+    }
+
+    .shadow5
+    {
+      position:relative;
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    .shadow5:before,
+    .shadow5:after
+    {
+      content:"";
+      position:absolute;
+      z-index:-1;
+      -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      box-shadow:0 0 20px rgba(0,0,0,0.8);
+      top:50%;
+      bottom:0;
+      left:10px;
+      right:10px;
+      -moz-border-radius:100px / 10px;
+      border-radius:100px / 10px;
+    }
+
+    .shadow6
+    {
+      position:relative;
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    .shadow6:before,
+    .shadow6:after
+    {
+      content:"";
+      position:absolute;
+      z-index:-1;
+      -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      box-shadow:0 0 20px rgba(0,0,0,0.8);
+      top:0;
+      bottom:0;
+      left:10px;
+      right:10px;
+      -moz-border-radius:100px / 10px;
+      border-radius:100px / 10px;
+    }
+    .shadow6:after
+    {
+      right:10px;
+      left:auto;
+      -webkit-transform:skew(8deg) rotate(3deg);
+      -moz-transform:skew(8deg) rotate(3deg);
+      -ms-transform:skew(8deg) rotate(3deg);
+      -o-transform:skew(8deg) rotate(3deg);
+      transform:skew(8deg) rotate(3deg);
+    }
+
+    .shadow7
+    {
+      position:relative;
+      -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+      box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+    .shadow7:before,
+    .shadow7:after
+    {
+      content:"";
+      position:absolute;
+      z-index:-1;
+      -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+      box-shadow:0 0 20px rgba(0,0,0,0.8);
+      top:10px;
+      bottom:10px;
+      left:0;
+      right:0;
+      -moz-border-radius:100px / 10px;
+      border-radius:100px / 10px;
+    }
+    .shadow7:after
+    {
+      right:10px;
+      left:auto;
+      -webkit-transform:skew(8deg) rotate(3deg);
+      -moz-transform:skew(8deg) rotate(3deg);
+      -ms-transform:skew(8deg) rotate(3deg);
+      -o-transform:skew(8deg) rotate(3deg);
+      transform:skew(8deg) rotate(3deg);
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <p class="bg-info">
+    box-shadow属性向框添加一个或多个阴影，有2~6个参数可选，必须的参数是水平位移和纵向位移。
+    <i>box-shadow: h-shadow v-shadow blur spread color inset;</i>
+  </p>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <td>值</td>
+      <td>描述</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>h-shadow</td>
+      <td>必需，水平阴影偏移量，允许负值。取正直阴影在元素的右边，反之取负值阴影在元素的左边。</td>
+    </tr>
+    <tr>
+      <td>v-shadow</td>
+      <td>必需，垂直阴影偏移量，允许负值。取正直阴影在元素的下边，反之取负值阴影在元素的上边。</td>
+    </tr>
+    <tr>
+      <td>blur</td>
+      <td>可选，模糊距离。其值只能是正值，如果为0，表示不具有模糊效果，值越大阴影边缘越模糊。</td>
+    </tr>
+    <tr>
+      <td>spread</td>
+      <td>可选，阴影的扩展半径，可以取负值。值越大阴影越大，反之取负值则整个阴影都缩小。</td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>可选，阴影的颜色。</td>
+    </tr>
+    <tr>
+      <td>inset</td>
+      <td>可选，将外部（outset）阴影改成内部阴影。默认是outset.</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="row shadowDemo">
+    <h3>盒阴影的基础事例</h3>
+    <div class="demo1 col-md-2">
+      四周的阴影效果相同，且是内阴影。
+    </div>
+    <div class="demo2 col-md-2 col-md-offset-1">
+      四周的阴影效果相同，且是外阴影。
+    </div>
+    <div class="demo3 col-md-4 col-md-offset-1">
+      <h4>利用阴影设置元素的边框不会影响页面的布局，不同于border会被计算，因此可以用box-shadow自有的模拟元素边框，但是必须注意其层级关系。</h4>
+      <ol>
+        <li>
+          非零值的border-radius会以相同的作用影响阴影的外形。
+        </li>
+        <li>
+          border-image不会影响对象阴影的任何外形。
+        </li>
+        <li>
+          外阴影会在对象背景之上，内阴影会在边框之下，背景之上。
+        </li>
+        <li>
+          <b>总之：边框在内阴影之上，内阴影在背景图片之上，背景图片在背景色之上，背景色在外阴影之上。</b>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="row shadowDemo">
+    <h3>多层盒阴影</h3>
+    <div class="multipleShadow col-md-4">
+      <ol>
+        <li>制作多层阴影，不设置模糊半径，只设置扩展半径,并配合多个阴影颜色，可以制作多色边框效果，替代border-color制作的多色边框效果。</li>
+        <li>box-shadow制作多色边框时需要注意，在计算宽度时需要减去前面的阴影的值，才是显示的颜色宽度。</li>
+        <li>制作多层box-shadow时要注意阴影的顺序，最先写的阴影将显示在最顶层。</li>
+      </ol>
+    </div>
+    <div class="rainbow col-md-4 col-md-offset-1">
+      彩虹
+    </div>
+  </div>
+
+  <div class="row shadowDemo">
+    <div class="shadow1 col-md-4 col-md-offset-1">
+      Shadow 1 浮雕效果
+    </div>
+    <div class="shadow2 col-md-4 col-md-offset-2">
+      Shadow 2
+    </div>
+  </div>
+  <div class="row shadowDemo">
+    <div class="shadow3 col-md-4 col-md-offset-1">
+      Shadow 3
+    </div>
+    <div class="shadow4 col-md-4 col-md-offset-2">
+      Shadow 4
+    </div>
+  </div>
+  <div class="row shadowDemo">
+    <div class="shadow5 col-md-4 col-md-offset-1">
+      Shadow 5
+    </div>
+  </div>
+  <div class="row shadowDemo">
+    <div class="shadow7 col-md-4 col-md-offset-1">
+      Shadow 7
+    </div>
+    <div class="shadow6 col-md-4 col-md-offset-2">
+      Shadow 6
+    </div>
+  </div>
+</div>
+</body>
+</html>
