@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input event</title>
+</head>
+<body>
+    <input type="text" id="username">
+</body>
+<script type="text/javascript">
+    var username = document.getElementById("username");
+    var result = [];
+    username.addEventListener("input", function(event) {
+        result.push({
+            event  : 'input',
+            value  : this.value,
+            keyCode : event.keyCode
+        });
+    });
+    //  注册keydown事件
+    username.addEventListener("keydown", function(event) {
+        result.push({
+            event  : 'keydown',
+            value  : this.value,
+            keyCode : event.keyCode
+        });
+    });
+    //  注册keypress事件
+    username.addEventListener("keypress", function(event) {
+        result.push({
+            event  : 'keypress',
+            value  : this.value,
+            keyCode : event.keyCode
+        });
+    });
+    //  注册keyup事件
+    username.addEventListener("keyup", function(event) {
+        result.push({
+            event  : 'keyup',
+            value  : this.value,
+            keyCode : event.keyCode
+        });
+    });
+    //  注册change事件
+    username.addEventListener("change", function(event) {
+        result.push({
+            event  : 'change',
+            value  : this.value,
+            keyCode : event.keyCode
+        });
+    });
+    //  注册blur事件
+    username.addEventListener("blur", function(event) {
+        result.push({
+            event  : 'blur',
+            value  : this.value,
+            keyCode : event.keyCode
+        });
+        //  输出结果
+        console.table(result);
+    })
+</script>
+</html>
