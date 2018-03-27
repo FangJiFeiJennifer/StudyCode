@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>background-blend-mode Property</title>
+  <style type="text/css" rel="stylesheet">
+      .container1,
+      .container2{
+          display: flex;
+      }
+      .pic,
+      .pic1,
+      .pic2,
+      .pic3{
+          width: 200px;
+          height: 200px;
+          background-size: cover;
+          margin-right: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .container1 .pic {
+          background-image: url("images/icon.png");
+      }
+
+      .container1 .pic1 {
+          background-image: url("images/icon.png"), linear-gradient(#f00, #f00);
+          background-blend-mode: lighten;
+      }
+      .container1 .pic2 {
+          background-image: url("images/icon.png"), linear-gradient(#f00, #00f);
+          background-blend-mode: lighten;
+      }
+
+
+     .container2 .pic {
+         background-image: url("images/icon1.png");
+     }
+     .container2 .pic1 {
+          background-image: url("images/icon1.png"), linear-gradient(#f00, #f00);
+          background-blend-mode: lighten;
+          background-size: cover;
+      }
+     .container2 .pic2 {
+          background-image: url("images/icon1.png"), linear-gradient(#333, #333);
+          background-blend-mode: lighten;
+          background-size: cover;
+      }
+     .container2 .pic3 {
+          background-image: url("images/icon1.png"), linear-gradient(#f00, #00f);
+          background-blend-mode: lighten;
+          background-size: cover;
+      }
+     .lightenDemo{
+           width: 400px;
+           height: 500px;
+           background: url("images/lighten2.jpg"),url("images/lighten1.jpg");
+           background-size: cover;
+           background-blend-mode: lighten;
+     }
+
+     .mixBlend {
+       background-image: url('images/1000.jpeg');
+       background-size: cover;
+       background-repeat: no-repeat;
+     }
+
+     .blend {
+       mix-blend-mode: exclusion;
+       color: white;
+       display: block;
+       height: 100%;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       font-size: 6vw;
+     }
+
+     .red {
+       color: red;
+     }
+
+     .green {
+       color: green;
+     }
+
+     blockquote {
+       margin-bottom: 100px;
+       line-height: 1.1;
+     }
+  </style>
+</head>
+<body>
+    <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/blend-mode" target="_blank">blend-mode 概 念 </a>
+    <ol>
+        <li>
+            <h3>
+                使用 background-blend-mode: lighten。 lighten : 变亮, 最终颜色是由每个颜色通道的最亮值组成的颜色.<br>
+                其实就是图片或者背景色重叠的时候，颜色更亮的显示出来，颜色暗的被覆盖掉。
+                <br>
+                顾名思义，这个混合只是混合背景色，不会影响元素的前景内容。
+            </h3>
+            <p>(1). 实现白色底黑色图案图片颜色赋色技术，图片格式无限制，JPG、PNG、GIF 都可以</p>
+            <ul>
+                <li>黑色是最暗的颜色，所以可以被任何颜色替换掉;</li>
+                <li>白色最亮，所以不会有任何变化;</li>
+                <li>反之，如果素材的底色是黑色，主色是白色。那就应该用变暗（darken）的混合模式.</li>
+            </ul>
+
+            <div class="container1">
+                <div class="pic">Hello</div>
+                <div class="pic1">Hello</div>
+                <div class="pic2">Hello</div>
+            </div>
+            <p>(2). 假设图片的底色是透明的，内容色是灰色的。</p>
+            <div class="container2">
+                <div class="pic">Hello</div>
+                <div class="pic1">Hello</div>
+                <div class="pic2">Hello</div>
+                <div class="pic3">Hello</div>
+            </div>
+            <p>(3). 图片合并。</p>
+            <div class="lightenDemo"></div>
+        </li>
+
+        <li>
+            <h3>
+                The mix-blend-mode property defines how an element’s content should blend with its background.
+                This means that any images or text, borders or headings will be influenced by this property.
+            </h3>
+            <div class="mixBlend">
+                 <div class="blend">
+                     <blockquote class="red">“Attack design doldrums with stylistic souplesse”</blockquote>
+                     <blockquote class="yellow">“Fashionable figures break away from the populist peloton”</blockquote>
+                     <blockquote class="green">“Comprehensive characters for culturally correct creations”</blockquote>
+                 </div>
+            </div>
+        </li>
+    </ol>
+</body>
+</html>
