@@ -32,6 +32,11 @@
       height:20px;
       border: 1px solid orangered;
     }
+
+    .inline1 label{
+        padding: 40px;
+        background: rgba(224, 239, 66, 0.2);
+    }
   </style>
 </head>
 <body>
@@ -44,14 +49,17 @@
       CSS为内联元素设置的高和宽是不起作用的，除非为内联元素设置display:inline-block;
     </li>
     <li>
-      内联元素之间默认左右有间距，上下没有。
+      内联元素之间默认左右有margin，上下没有。
+    </li>
+    <li>
+      内联元素可以设置padding，但是padding-top, padding-bottom不会撑开上下的其它元素，反而会覆盖其他的元素。<b>这估计就是不常给inline element set padding属性的原因。</b>
     </li>
     <li>
       通过以下显示内容，我们可以看出内联元素与inline-block之间的区别。
     </li>
   </ol>
   <div class="compare">
-    <div>
+    <div class="inline1">
       <span>span1</span>
       <span>span2</span>
       <label>Label</label>
@@ -62,6 +70,7 @@
       <label>Label</label>
     </div>
   </div>
+
   <ol>
     <li>
       块级元素会自动换行，可以设置高和宽度。
@@ -87,6 +96,7 @@
       <div>div3</div>
     </div>
   </div>
+
 </div>
 </body>
 </html>
