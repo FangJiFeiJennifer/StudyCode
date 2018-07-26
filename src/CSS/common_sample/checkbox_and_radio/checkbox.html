@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义checkbox,radio样式</title>
+  <style>
+  #checkbox_sample{
+    margin-top: 32px;
+  }
+  .group{
+    display: flex;
+    margin-top: 8px;
+  }
+  .group > .checkbox{
+      margin-right: 24px;
+  }
+
+  /*checkbox style start*/
+  /*Customize the label*/
+  .checkbox{
+      display: block;
+      position: relative;
+      cursor: pointer;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+  /* Hide the browser's default checkbox */
+  input[type="checkbox"] {
+      position: absolute;
+      opacity: 0; /*Hide the browser's default checkbox*/
+      cursor: pointer;
+  }
+
+  /* Create a custom checkbox */
+  .check_mark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .checkbox:hover input ~ .check_mark {
+      background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .checkbox input:checked ~ .check_mark {
+      background-color: #2196F3;
+  }
+
+  /* Create the check_mark/indicator (hidden when not checked) */
+  .check_mark:after {
+      content: "";
+      position: absolute;
+      display: none;
+  }
+
+  /* Show the check_mark when checked */
+  .checkbox input:checked ~ .check_mark:after {
+      display: block;
+  }
+
+  /* Style the check_mark/indicator */
+  .checkbox .check_mark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+  }
+  /*checkbox style end*/
+   </style>
+</head>
+<body>
+<div id="checkbox_sample">
+    <h2>The checkbox sample</h2>
+    <div class="group">
+        <div class="checkbox">
+            One
+            <input type="checkbox" id="one" name="one" checked="checked">
+            <span class="check_mark"></span>
+        </div>
+
+        <div class="checkbox">
+            Two
+            <input type="checkbox" id="two" name="two">
+            <span class="check_mark"></span>
+        </div>
+
+        <div class="checkbox">
+            Three
+            <input type="checkbox" id="three" name="three">
+            <span class="check_mark"></span>
+        </div>
+
+        <div class="checkbox">
+            Four
+            <input type="checkbox" id="four" name="four">
+            <span class="check_mark"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
