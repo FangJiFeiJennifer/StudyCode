@@ -15,18 +15,12 @@
       margin-right: 24px;
     }
     /*radio style start*/
-    .radio{
-      display: block;
-      position: relative;
-    }
-
-    input[type="radio"] {
-      position: absolute;
-      opacity: 0;
+    .radio input[type="radio"] {
+      display: none;
       cursor: pointer;
     }
 
-    input[type="radio"] + label span {
+    .radio input[type="radio"] + label span {
       display:inline-block;
       width:26px;
       height:26px;
@@ -36,7 +30,7 @@
       cursor:pointer;
     }
 
-    input[type="radio"]:checked + label span {
+    .radio input[type="radio"]:checked + label span {
       background:url(../../../lib/images/helphub_sprite_horizontal_v12.svg) -818px -333px no-repeat;
     }
     /*radio style end*/
@@ -53,26 +47,111 @@
       background-color: #d9edf7;
       border-color: #bce8f1;
     }
+
+
+    /* Customize the label (the container) */
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin: 0 24px 12px 0;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .container input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+      background-color: #2196F3;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
   </style>
 </head>
 <body>
-<div id="radio_sample">
-  <h2>The radio button sample</h2>
-  <div class="group">
-    <div class="radio">
-      <input type="radio" id="yes" name="callConsent" value="true"/>
-      <label for="yes"><span></span>Yes</label>
-    </div>
+    <div id="radio_sample">
+      <h2>The radio button sample</h2>
+      <div class="group">
+        <div class="radio">
+          <input type="radio" id="yes" name="callConsent" value="true"/>
+          <label for="yes"><span></span>Yes</label>
+        </div>
 
-    <div class="radio">
-      <input type="radio" id="no" name="callConsent" value="false"/>
-      <label for="no"><span></span>No</label>
+        <div class="radio">
+          <input type="radio" id="no" name="callConsent" value="false"/>
+          <label for="no"><span></span>No</label>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<label class="alert alert-info">
-  <strong>注意：</strong>
-  在一个radio button group里面，通过键盘的上下左右键，是可以切换选中的按钮的。
-</label>
+    <label class="alert alert-info">
+      <strong>注意：</strong>
+      在一个radio button group里面，通过键盘的上下左右键，是可以切换选中的按钮的。虽然实现Radio有很多方式，但是也需要注意Accessibility。
+      例如以上的实现方式，就不妥，不可以通过键盘的上下左右键，切换按钮的选中。
+    </label>
+
+
+    <div class="group">
+        <label class="container">One
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Two
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Three
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+        <label class="container">Four
+          <input type="radio" name="radio">
+          <span class="checkmark"></span>
+        </label>
+    </div>
 </body>
 </html>
