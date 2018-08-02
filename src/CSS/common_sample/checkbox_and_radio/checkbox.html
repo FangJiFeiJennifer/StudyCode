@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>自定义checkbox,radio样式</title>
+  <title>自定义checkbox样式</title>
   <style>
   #checkbox_sample{
     margin-top: 32px;
@@ -46,8 +46,13 @@
   }
 
   /* On mouse-over, add a grey background color */
-  .checkbox:hover input ~ .check_mark {
+  .checkbox:hover input ~ .check_mark{
       background-color: #ccc;
+  }
+
+    /* When the checkbox get focus, add a blue background */
+  .checkbox input:focus ~ .check_mark{
+    background-color: lightsalmon;
   }
 
   /* When the checkbox is checked, add a blue background */
