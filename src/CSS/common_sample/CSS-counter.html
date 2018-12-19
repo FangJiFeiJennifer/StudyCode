@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Counter Sample</title>
+  <link rel="stylesheet" href="../../lib/css/bootstrap.css">
+  <style type="text/css">
+    /*CSS3 counter*/
+    /* Initialiazing a `footnotes` counter on the wrapper */
+    .article_main {
+        counter-reset: footnotes;
+    }
+
+    [aria-describedby="footnote-label"]{
+      counter-increment: footnotes; /* 1 */
+      text-decoration: none; /* 2 */
+      color: inherit; /* 2 */
+      cursor: default; /* 2 */
+      outline: none; /* 2 */
+    }
+
+    [aria-describedby="footnote-label"]::after {
+      content: '[' counter(footnotes) ']'; /* 1 */
+      vertical-align: super; /* 2 */
+      font-size: 0.75em; /* 3 */
+      margin-left: 2px; /* 4 */
+      color: blue; /* 5 */
+      text-decoration: underline; /* 5 */
+      cursor: pointer; /* 5 */
+    }
+
+    [aria-describedby="footnote-label"]:focus::after {
+      outline: thin dotted;
+      outline-offset: 2px;
+    }
+
+
+    /* Initialiazing a `comment` counter on the wrapper */
+    #footnote-label{
+      counter-reset: comment;
+    }
+    .footnoteComment{
+      counter-increment: comment; /* 1 */
+    }
+    .footnoteComment::before {
+      content: '[' counter(comment) ']'; /* 1 */
+      margin-right: 8px; /* 4 */
+    }
+
+    .counter_two{
+        counter-reset: title;
+    }
+    h3::before{
+        counter-increment: title;
+        content: counter(title)". ";
+    }
+    h3{
+        counter-reset: content;
+    }
+    h4::before{
+        counter-increment: content;
+        content: counter(title)"."counter(content)" ";
+    }
+  </style>
+</head>
+<body class="container">
+    <h2>Use css counter on the footnote</h2>
+    <div class="article_main">
+
+        <table class="table table-bordered table-responsive">
+            <thead>
+            <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Insertion fee</th>
+                <th scope="col">Final value fee:<br>
+                    % of total amount of sale<a aria-describedby="footnote-label" href="#comment1" id="footnotes1"></a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Standard fees for most categories, including Music &gt; Records, eBay Motors &gt; Parts &amp; Accessories, and eBay Motors &gt; Automotive Tools &amp; Supplies. For vehicles, see our <a href="/help/selling/fees-credits-invoices/motors-fees?id=4127">Motors fees</a>.</td>
+                <td rowspan="2">First 50 listings free per month, then $0.35 per listing <a aria-describedby="footnote-label" href="#comment2" id="footnotes2"></a></td>
+                <td>10% (maximum fee $750)</td>
+            </tr>
+            <tr>
+                <td>Books<br>
+                    DVDs &amp; Movies<br>
+                    Music (except <strong>Records</strong> category)</td>
+                <td>12% (maximum fee $750)</td>
+            </tr>
+            <tr>
+                <td>Select Business &amp; Industrial categories:
+                    <ul>
+                        <li>Heavy Equipment Parts &amp; Attachments &gt; <strong>Heavy Equipment</strong></li>
+                        <li>Printing &amp; Graphic Arts &gt; <strong>Commercial Printing Presses</strong></li>
+                        <li>Restaurant &amp; Food Service &gt; <strong>Food Trucks, Trailers &amp; Carts</strong></li>
+                    </ul>
+                </td>
+                <td>$20</td>
+                <td>2% (maximum fee $300)</td>
+            </tr>
+            <tr>
+                <td>Musical Instruments &amp; Gear &gt; <strong>Guitars &amp; Basses</strong></td>
+                <td>Free</td>
+                <td>3.5% (maximum fee $350)</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p class="footnoteComment" id="comment1">Maximum fee caps do not apply to the additional final value fees charged to sellers who are <a href="#performance">not meeting our performance expectations</a>. <a aria-label="Back to content" href="#footnotes1">↩</a></p>
+
+        <p class="footnoteComment" id="comment2">Exclusions apply – see our <a href="/help/selling/listings/listing-tips/free-listings?id=4163">Zero insertion fee listings</a> article for details. <a aria-label="Back to content" href="#footnotes2">↩</a></p>
+        <h3>1<a aria-describedby="footnote-label" href="#comment3" id="footnotes3"></a>, 3, 5, 7 and 10-day listing duration</h3>
+
+        <table class="table table-bordered table-responsive">
+            <thead>
+            <tr>
+                <th scope="col">Advanced listing upgrade</th>
+                <th scope="col">Item price of up to $150<br>
+                    or items listed in the<br>
+                    Real Estate category</th>
+                <th scope="col">Item price of more than $150</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Bold</td>
+                <td>$2.00</td>
+                <td>$3.00</td>
+            </tr>
+            <tr>
+                <td>Gallery Plus<br>
+                    Free for listings in the Collectibles, Art, Pottery &amp; Glass, and Antiques categories</td>
+                <td>$0.35</td>
+                <td>$0.70</td>
+            </tr>
+            <tr>
+                <td>International site visibility for fixed price listings&nbsp;(see below for fees for auction-style listings)&nbsp;</td>
+                <td>$0.50</td>
+                <td>$0.50</td>
+            </tr>
+            <tr>
+                <td>List in two categories</td>
+                <td colspan="2">Insertion and advanced listing upgrade fees apply for each category. Final value fees are charged once per item, if your item sells</td>
+            </tr>
+            <tr>
+                <td>Listing Designer</td>
+                <td>$0.10</td>
+                <td>$0.20</td>
+            </tr>
+            <tr>
+                <td>Subtitle</td>
+                <td>$1.00 ($0.50 for Real Estate listings)</td>
+                <td>$3.00</td>
+            </tr>
+            <tr>
+                <td>Value Pack<br>
+                    It combines Gallery Plus, Subtitle, and Listing Designer for a discounted fee. Value Pack isn't available for Powersport Vehicles under 50cc.</td>
+                <td>$1.15 ($0.65 for Real Estate listings)</td>
+                <td>$3.15</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p class="footnoteComment" id="comment3">1-day duration is only available for auction-style listings. <a aria-label="Back to content" href="#footnotes3">↩</a></p>
+        <p class="hide" id="footnote-label">Footnotes</p>
+    </div>
+
+    <div class="counter_two">
+        <h3>Title</h3>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+
+        <h3>Title</h3>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+
+        <h3>Title</h3>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+        <h4>Content content content</h4>
+    </div>
+</body>
+</html>
